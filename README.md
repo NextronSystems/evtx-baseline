@@ -16,44 +16,57 @@ A repository hosting example goodware evtx logs containing sample software insta
 ### Installed Software
 (performed by https://ninite.com/)
 
-    - Chrome
-    - Opera
-    - Firefox
-    - Teamviewer
-    - WinDirStat
-    - Zoom
-    - Pidgin
-    - Thunderbird
-    - iTunes
-    - VLC
-    - Audacity
-    - Spotify
-    - Java x64 8
-    - .NET Runtime x64 5+6
-    - Paint.NET
-    - Gimp
-    - IrfanView
-    - XnView
-    - Inkscape
-    - Greenshot
-    - Foxit Reader
-    - LibreOffice
-    - Python x64 3
-    - Filezilla
-    - Notepad++
-    - WinSCP
-    - PuTTY
-    - WinMerge
-    - Eclipse
-    - VS Code
-    - Evernote
-    - Keepass 2
-    - Everything
-    - Dropbox
-    - Google Drive
-    - OneDrive
-    - 7zip
-    - WinRAR
+* Web Browsers
+  * Chrome
+  * Opera
+  * Firefox
+* File Sharing
+* Compression
+  * 7zip
+  * WinRAR
+* Messaging
+  * Zoom
+  * Pidgin
+  * Thunderbird
+* Other
+  * Evernote
+  * Keepass 2
+  * Everything
+* Media
+  * iTunes
+  * VLC
+  * Audacity
+  * Spotify
+* Runtimes
+  * Java (AdoptOpenJDK) x64 
+  * .NET Runtime x64 5+6
+* Developer Tools
+  * Python x64 3
+  * Filezilla
+  * Notepad++
+  * WinSCP
+  * PuTTY
+  * WinMerge
+  * Eclipse
+  * VS Code
+* Imaging
+  * Paint.NET
+  * Gimp
+  * IrfanView
+  * XnView
+  * Inkscape
+  * Greenshot
+* Documents
+  * Foxit Reader
+  * LibreOffice
+* Online Storage
+  * Dropbox
+  * Google Drive
+  * OneDrive
+* Security
+* Utilities
+  * Teamviewer
+  * WinDirStat
 
 ### User Interaction
 
