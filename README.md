@@ -1,6 +1,12 @@
 # evtx-baseline
 A repository hosting example goodware evtx logs containing sample software installation and basic user interaction
 
+# Donations
+- win10-client.tgz by @phantinuss
+- win11-client.tgz by @frack113
+
+If you want to donate, create an issue or contact @phantinuss at twitter or keybase (the large files are only organised in releases, not the repo itself)
+
 ## How the data was produced
 
 1. Install a Windows VM using a trial license (https://www.microsoft.com/en-us/evalcenter/)
