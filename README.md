@@ -13,11 +13,21 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 1. Install a Windows VM using a trial license (https://www.microsoft.com/en-us/evalcenter/)
 2. Install Sysmon (http://live.sysinternals.com/tools/Sysmon64.exe) using [sysmon-intense.xml](sysmon-intense.xml) which is a fork of [Cyb3rWard0g's config](https://github.com/OTRF/Blacksmith/blob/master/resources/configs/sysmon/sysmon.xml)
 3. Increase the Sysmon log size to not lose events by log rotation (512MB-1GB were needed for the data in this repo)
+
 ![image](https://user-images.githubusercontent.com/79651203/155971412-1045b0f6-6309-4569-8041-687e4d2f4b08.png)
 
 4. Activate logging of process creation events
+
+![image](https://user-images.githubusercontent.com/79651203/161557067-87ab2977-e351-4595-b083-cceaafe19614.png)
+
 5. Activate logging of process command line
+
+![image](https://user-images.githubusercontent.com/79651203/161557776-b06f7436-908d-4da2-8331-daa50e51309a.png)
+
 6. Activate Powershell scriptblock Logging
+
+`gpedit.exe > Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell > Turn On PowerShell Script Block Logging`
+
 7. Install software and simulate interaction
 
 
