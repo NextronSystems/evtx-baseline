@@ -26,7 +26,7 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 
 6. Activate Powershell scriptblock Logging
 
-`gpedit.exe > Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell > Turn On PowerShell Script Block Logging`
+`gpedit.msc > Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell > Turn On PowerShell Script Block Logging`
 
 7. Install software and simulate interaction
 
