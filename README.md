@@ -4,6 +4,7 @@ A repository hosting example goodware evtx logs containing sample software insta
 # Donations
 - win10-client.tgz by [@phantinuss](https://github.com/phantinuss/)
 - win11-client.tgz by [@frack113](https://github.com/frack113/)
+- win7-x86.tgz by [@pH-T](https://github.com/pH-T)
 
 If you want to donate, create an issue or contact @phantinuss at twitter or keybase (the large files are only organised in releases, not the repo itself)
 
@@ -14,7 +15,10 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 3. Increase the Sysmon log size to not lose events by log rotation (512MB-1GB were needed for the data in this repo)
 ![image](https://user-images.githubusercontent.com/79651203/155971412-1045b0f6-6309-4569-8041-687e4d2f4b08.png)
 
-4. Install software and simulate interaction
+4. Activate logging of process creation events
+5. Activate logging of process command line
+6. Activate Powershell scriptblock Logging
+7. Install software and simulate interaction
 
 
 ## Windows 10 Software and Interaction
