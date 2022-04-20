@@ -6,6 +6,7 @@ A repository hosting example goodware evtx logs containing sample software insta
 - win11-client.tgz by [@frack113](https://github.com/frack113/)
 - win7-x86.tgz by [@pH-T](https://github.com/pH-T)
 - win2022-evtx.tgz [@Neo23x0](https://github.com/Neo23x0)
+- win2022-ad.tgz [@frack113](https://github.com/frack113)
 
 If you want to donate, create an issue or contact @phantinuss at twitter or keybase (the large files are only organised in releases, not the repo itself)
 
@@ -106,3 +107,23 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
     - Search with everything
     - Pack and extract using 7zip
     - Pack and extract using WinRar
+
+## Windows 2022 AD Interaction
+
+    - Install from ISO
+    - Install sysmon
+    - Configure logs
+    - Connect network
+    - Add AD role
+    - Update OS
+    - Add user1 and user2
+    - * install win10 for client
+    - connect  DESTOP-S5D8VB9 to domain
+    - Add group sigma
+    - add user1 to sigma group
+    - login as user2 on destop
+    - change default GPO to enable powershell log
+    - gpupdate /force (client too)
+    - create shareme
+    - put sysmon64.exe into
+    - get and push a new file in shareme from client
