@@ -39,7 +39,7 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 Once all is done and you're ready to donate the event log, open a powershell console as administrator and execute the following command
 
 ```powershell
-mkdir C:\Users\Public\Downloads\evtx; Copy-Item "C:\Windows\System32\winevt\Logs\*.evtx" -Destination C:\Users\Public\Downloads\evtx\; $filename = "C:\Users\Public\Downloads\doantion-evtx-" + $([System.Environment]::OSVersion.Version.Major) + "-" + $([System.Environment]::OSVersion.Version.Minor) + "-" + $([System.Environment]::OSVersion.Version.Build); Compress-Archive -Path C:\Users\Public\Downloads\evtx  -CompressionLevel Optimal -DestinationPath $filename
+mkdir C:\Users\Public\Downloads\evtx; Copy-Item "C:\Windows\System32\winevt\Logs\*.evtx" -Destination C:\Users\Public\Downloads\evtx\; $filename = "C:\Users\Public\Downloads\doantion-evtx-" + $([System.Environment]::OSVersion.Version.Major) + "-" + $([System.Environment]::OSVersion.Version.Minor) + "-" + $([System.Environment]::OSVersion.Version.Build); Compress-Archive -Path C:\Users\Public\Downloads\evtx  -CompressionLevel Optimal -DestinationPath $filename; Remove-Item C:\Users\Public\Downloads\evtx\ -Recurse; explorer C:\Users\Public\Downloads\
 ```
 
 The resulting file will be located in `C:\Users\Public\Downloads\` and have the following naming convention `donation-evtx-[MajorVersion]-[MinorVersion]-[Build].zip` and is now ready to be donated :)
