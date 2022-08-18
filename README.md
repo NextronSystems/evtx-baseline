@@ -18,13 +18,19 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 
 ![image](https://user-images.githubusercontent.com/79651203/155971412-1045b0f6-6309-4569-8041-687e4d2f4b08.png)
 
-4. Activate logging of process creation events
+(Location: Open "Event Viewer", navigate to "Applications and Service Log" > "Microsoft" > "Windows" > "Sysmon" > "Operational" > right click "Properties")
+
+4. Activate logging of process creation events and all other categories with their subcategories except the "Object Access" category. At least the [Microsoft Recommendations](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations) are needed.
 
 ![image](https://user-images.githubusercontent.com/79651203/161557067-87ab2977-e351-4595-b083-cceaafe19614.png)
+
+(Location: Open "gpedit" > "Computer Configuration" > "Windows Settings" > "Security Settings" > "Advanced Audit Policy Configuration"
 
 5. Activate logging of process command line
 
 ![image](https://user-images.githubusercontent.com/79651203/161557776-b06f7436-908d-4da2-8331-daa50e51309a.png)
+
+(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "System" > "Audit Process Creation" > "Include command line in process creation events" set to "Enabled")
 
 6. Activate Powershell scriptblock Logging
 
