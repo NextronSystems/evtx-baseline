@@ -30,6 +30,8 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 
 ![image](https://user-images.githubusercontent.com/79651203/161557776-b06f7436-908d-4da2-8331-daa50e51309a.png)
 
+(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "System" > "Audit Process Creation" > "Include command line in process creation events" set to "Enabled")
+
 6. Activate Powershell scriptblock Logging
 
 `gpedit.msc > Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell > Turn On PowerShell Script Block Logging`
