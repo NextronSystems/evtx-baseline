@@ -75,9 +75,13 @@ mkdir C:\Users\Public\Downloads\evtx; Copy-Item "C:\Windows\System32\winevt\Logs
 
 The resulting file will be located in `C:\Users\Public\Downloads\` and have the following naming convention `donation-evtx-[MajorVersion]-[MinorVersion]-[Build].zip` and is now ready to be donated :)
 
-## Windows 10 Software and Interaction
+## Examples for Activity
 
-### Installed Software
+The following chapters show what we did on out test systems to simulate real user activity. It is meant as an example of what we did to create auhtentic log data. You could use your own systems or simulate your own user activity.
+
+### Windows 10 Software and Interaction
+
+#### Installed Software
 (performed by https://ninite.com/)
 
 * Web Browsers
@@ -132,8 +136,10 @@ The resulting file will be located in `C:\Users\Public\Downloads\` and have the 
   * Teamviewer
   * WinDirStat
 
-### User Interaction
+#### User Interaction
 
+    - Start the programs and search for updates
+    - Install updates
     - Surf some Websites
         - Download pdf and open
     - Chrome: Download and install MS Office Trial
@@ -150,7 +156,7 @@ The resulting file will be located in `C:\Users\Public\Downloads\` and have the 
     - Pack and extract using 7zip
     - Pack and extract using WinRar
 
-## Windows 2022 AD Interaction
+### Windows 2022 AD Interaction
 
     - Install from ISO
     - Install sysmon
