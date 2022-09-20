@@ -70,10 +70,16 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging\Module
 Once all is done and you're ready to donate the event log, open a powershell console as administrator and execute the following command
 
 ```powershell
-mkdir C:\Users\Public\Downloads\evtx; Copy-Item "C:\Windows\System32\winevt\Logs\*.evtx" -Destination C:\Users\Public\Downloads\evtx\; $filename = "C:\Users\Public\Downloads\doantion-evtx-" + $([System.Environment]::OSVersion.Version.Major) + "-" + $([System.Environment]::OSVersion.Version.Minor) + "-" + $([System.Environment]::OSVersion.Version.Build); Compress-Archive -Path C:\Users\Public\Downloads\evtx  -CompressionLevel Optimal -DestinationPath $filename; Remove-Item C:\Users\Public\Downloads\evtx\ -Recurse; explorer C:\Users\Public\Downloads\
+mkdir $ENV:UserProfile\evtx; Copy-Item "C:\Windows\System32\winevt\Logs\*.evtx" -Destination $ENV:UserProfile\evtx\; $filename = "$ENV:UserProfile\doantion-evtx-" + $([System.Environment]::OSVersion.Version.Major) + "-" + $([System.Environment]::OSVersion.Version.Minor) + "-" + $([System.Environment]::OSVersion.Version.Build); Compress-Archive -Path $ENV:UserProfile\evtx  -CompressionLevel Optimal -DestinationPath $filename; Remove-Item $ENV:UserProfile\evtx\ -Recurse; explorer $ENV:UserProfile\
 ```
 
-The resulting file will be located in `C:\Users\Public\Downloads\` and have the following naming convention `donation-evtx-[MajorVersion]-[MinorVersion]-[Build].zip` and is now ready to be donated :)
+If you have 7-Zip (`C:\Program Files\7-Zip\7z.exe`) installed on your system and for faster results, please use the following command from an elevated powershell prompt
+
+```powershell
+mkdir $ENV:UserProfile\evtx; Copy-Item "C:\Windows\System32\winevt\Logs\*.evtx" -Destination $ENV:UserProfile\evtx\; $filename = "$ENV:UserProfile\doantion-evtx-" + $([System.Environment]::OSVersion.Version.Major) + "-" + $([System.Environment]::OSVersion.Version.Minor) + "-" + $([System.Environment]::OSVersion.Version.Build); & "C:\Program Files\7-Zip\7z.exe" a $filename $ENV:UserProfile\evtx\*; Remove-Item $ENV:UserProfile\evtx\ -Recurse; explorer $ENV:UserProfile\
+```
+
+The resulting file will be located in `$ENV:UserProfile\evtx\` and have the following naming convention `donation-evtx-[MajorVersion]-[MinorVersion]-[Build].zip/7z` and is now ready to be donated :)
 
 ## Windows 10 Software and Interaction
 
