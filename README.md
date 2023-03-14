@@ -85,8 +85,7 @@ Note: When Advanced Audit Policy Configuration settings are used, the "Audit: Fo
 
 ![powershell](https://user-images.githubusercontent.com/31235211/224982142-ccacd947-c86f-4b4f-bbe7-1546627f28cc.png)
 
-(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Module Logging" set to "Enabled")
-(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Script Block Logging" set to "Enabled")
+(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Module Logging" & "Turn on Script Block Logging" set to "Enabled")
 
 7. Install software and simulate interaction
 
