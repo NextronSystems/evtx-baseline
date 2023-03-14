@@ -83,7 +83,7 @@ Note: When Advanced Audit Policy Configuration settings are used, the "Audit: Fo
 
 6. Activate PowerShell Script Block Logging and PowerShell Module Logging
 
-
+![powershell](https://user-images.githubusercontent.com/31235211/224982142-ccacd947-c86f-4b4f-bbe7-1546627f28cc.png)
 
 (Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Module Logging" set to "Enabled")
 (Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Script Block Logging" set to "Enabled")
