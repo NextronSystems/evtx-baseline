@@ -56,6 +56,11 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging\Module
 
 (Location: Open "gpedit" > "Computer Configuration" > "Windows Settings" > "Security Settings" > "Advanced Audit Policy Configuration"
 
+Note: When Advanced Audit Policy Configuration settings are used, the "Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings" policy setting under Local Policies\Security Options must als be enabled.
+
+![image](https://user-images.githubusercontent.com/31235211/224973601-b8621b17-82e8-4ea7-8249-b5b92abc8ae3.png)
+
+
 5. Activate logging of process command line
 
 ![image](https://user-images.githubusercontent.com/79651203/161557776-b06f7436-908d-4da2-8331-daa50e51309a.png)
