@@ -20,34 +20,48 @@ If you want to donate, create an issue or contact @phantinuss at twitter or keyb
 3. Open a powershell console as an administrator and copy paste the following script
 
 - The following script will:
-  - Increase the Sysmon log size to not lose events by log rotation to 2GB
+  - Increase the Sysmon and PowerShell log size to not lose events by log rotation to 2GB
   - Increase the `Application`, `Security` and `System` logs to 512MB
   - Enable the `Microsoft-Windows-TaskScheduler/Operational` eventlog channel
-  - Enable PowerShell ScriptBlock Logging and Module Logging
+  - Enable the `Microsoft-Windows-DNS-Client/Operational` eventlog channel
+  - Enable the `Microsoft-Windows-DriverFrameworks-UserMode/Operational` eventlog channel
+  - Enable the `Microsoft-Windows-LSA/Operational` eventlog channel
 
 ```powershell
-# Incrase Sysmon, Application, Security and System logs Size
+# Incrase Sysmon logs Size
 $sysmon = Get-WinEvent -ListLog Microsoft-Windows-Sysmon/Operational
-$application = Get-WinEvent -ListLog Application
-$security = Get-WinEvent -ListLog Security
-$system = Get-WinEvent -ListLog System
-$sysmon.MaximumSizeInBytes = 2048000000 #2GB
-$application.MaximumSizeInBytes = 512000000 #512MB
-$security.MaximumSizeInBytes = 512000000 #512MB
-$system.MaximumSizeInBytes = 512000000 #512MB
-# Save changes
+$sysmon.MaximumSizeInBytes = 2147483648 #2GB
 $sysmon.SaveChanges()
-$application.SaveChanges()
-$security.SaveChanges()
-$system.SaveChanges()
-# Enable TaskScheduler/Operational channel
-wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true
 
-# Enable Powershell ScriptBlock Logging
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging /v EnableScriptBlockLogging /t REG_DWORD /d 1 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging /v EnableScriptBlockInvocationLogging /t REG_DWORD /d 1 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging /v EnableModuleLogging /t REG_DWORD /d 1 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging\ModuleNames /v "*" /t REG_SZ /d "*" /f
+# Incrase Powershell logs Size
+$ps1 = Get-WinEvent -ListLog Microsoft-Windows-PowerShell/Operational
+$ps1.MaximumSizeInBytes = 2147483648 #2GB
+$ps1.SaveChanges()
+
+$ps2 = Get-WinEvent -ListLog "Windows PowerShell"
+$ps2.MaximumSizeInBytes = 2147483648 #2GB
+$ps2.SaveChanges()
+
+# Incrase Application logs Size
+$application = Get-WinEvent -ListLog Application
+$application.MaximumSizeInBytes = 537919488 #512MB
+$application.SaveChanges()
+
+# Incrase Security logs Size
+$security = Get-WinEvent -ListLog Security
+$security.MaximumSizeInBytes = 537919488 #512MB
+$security.SaveChanges()
+
+# Incrase System logs Size
+$system = Get-WinEvent -ListLog System
+$system.MaximumSizeInBytes = 537919488 #512MB
+$system.SaveChanges()
+
+# Enable various Log Channels
+wevtutil sl Microsoft-Windows-DNS-Client/Operational /e:true
+wevtutil sl Microsoft-Windows-DriverFrameworks-UserMode/Operational /e:true
+wevtutil sl Microsoft-Windows-LSA/Operational /e:true
+wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true
 ```
 
 4. Activate logging of process creation events and all other categories with their subcategories except the "Object Access" category. At least the [Microsoft Recommendations](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations) are needed.
@@ -67,9 +81,16 @@ Note: When Advanced Audit Policy Configuration settings are used, the "Audit: Fo
 
 (Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "System" > "Audit Process Creation" > "Include command line in process creation events" set to "Enabled")
 
-6. Install software and simulate interaction
+6. Activate PowerShell Script Block Logging and PowerShell Module Logging
 
-7. Export the eventlog using the method described below and contribute
+
+
+(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Module Logging" set to "Enabled")
+(Location: Open "gpedit" > "Computer Configuration" > "Administrative Templates" > "Windows Components" > "Windows PowerShell" > "Turn on Script Block Logging" set to "Enabled")
+
+7. Install software and simulate interaction
+
+8. Export the eventlog using the method described below and contribute
 
 ## Export The Event Logs
 
