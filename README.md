@@ -8,6 +8,7 @@ A repository hosting example goodware evtx logs containing sample software insta
 - win2022-evtx.tgz by [@Neo23x0](https://github.com/Neo23x0)
 - win2022-ad.tgz by [@frack113](https://github.com/frack113)
 - win2022-0-20348-azure.tgz by [@Neo23x0](https://github.com/Neo23x0)
+- win11-client-2023.tgz by [@nasbench](https://github.com/nasbench)
 
 If you want to donate, create an issue or contact @phantinuss at twitter or keybase (the large files are only organised in releases, not the repo itself)
 
